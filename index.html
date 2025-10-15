@@ -174,9 +174,9 @@ function showThankYou(){
   const sub=exp.includes('Beginner')?`You chose "${goal}". We'll share simple signals & learning guides.`:
            exp.includes('Intermediate')?`You chose "${goal}". Expect actionable intraday signals.`:
            exp.includes('Expert')?`You chose "${goal}". Expect high-prob setups and sizing ideas.`:`You chose "${goal}". Join now to receive live signals.`;
-  qBox.innerHTML=`<div class="thankyou"><div class="emoji">🚀</div><div class="thank-h">${headline}</div><div class="thank-sub">${sub}</div><div><span class="fomo">⚡ Only few spots left — Join before access closes!</span></div><a id="joinBtn" class="join-btn" href="${telegramLink}">Join Telegram Now →</a><div class="count">Redirecting in <span id="count">3</span>s...</div></div>`;
+  qBox.innerHTML=`<div class="thankyou"><div class="emoji">🚀</div><div class="thank-h">${headline}</div><div class="thank-sub">${sub}</div><div><span class="fomo">⚡ Only few spots left — Join before access closes!</span></div><a id="joinBtn" class="join-btn" href="${telegramLink}">Join Telegram Now →</a><div class="count">Redirecting in <span id="count">10</span>s...</div></div>`;
   document.getElementById('joinBtn').addEventListener('click',()=>sendSubscribe());
-  let t=3;const count=document.getElementById('count');const timer=setInterval(()=>{t--;count.textContent=t;if(t<=0){clearInterval(timer);sendSubscribe();setTimeout(()=>location.href=telegramLink,200);}},1000);
+  let t=10;const count=document.getElementById('count');const timer=setInterval(()=>{t--;count.textContent=t;if(t<=0){clearInterval(timer);sendSubscribe();setTimeout(()=>location.href=telegramLink,200);}},1000);
 }
 renderQuestion();
 </script>
