@@ -1,338 +1,176 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Free Forex Signals — Quick Access</title>
-  <meta name="description" content="Answer 4 quick questions to join free Forex signals on Telegram. Limited access available!" />
-  <meta name="theme-color" content="#002b36">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Free Forex Signals — Quick Access</title>
+<meta name="description" content="Answer 4 quick questions to join free Forex signals on Telegram. Limited access available!"/>
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+<link rel="preconnect" href="https://t.me" crossorigin>
+<meta name="theme-color" content="#001a44">
 
-  <!-- Meta Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1593721464926438');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1593721464926438&ev=PageView&noscript=1"
-  /></noscript>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1593721464926438');
+fbq('track', 'PageView');
+</script>
 
-  <style>
-    :root{
-      --accent1:#00a86b;
-      --accent2:#00b28a;
-      --card-bg: rgba(255,255,255,0.98);
-      --glass-blur:10px;
-      --text-dark:#06202a;
-      --muted:#6b7280;
-      --shadow: 0 12px 30px rgba(2,6,23,0.28);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      background:
-        radial-gradient(600px 300px at 10% 10%, rgba(0,168,107,0.06), transparent 20%),
-        radial-gradient(500px 300px at 90% 90%, rgba(0,178,138,0.04), transparent 20%),
-        linear-gradient(135deg,#001f33,#003b2d);
-      min-height:100vh;display:flex;align-items:center;justify-content:center;
-      color:var(--text-dark);padding:24px;
-    }
+<style>
+:root{
+  --accent1:#0046ff;
+  --accent2:#00b4ff;
+  --text:#0a0a1a;
+  --muted:#6b7280;
+}
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  background: linear-gradient(145deg,#001a44,#00386f);
+  /* ✅ 👇 Replace this URL with your image link */
+  background-image: url("YOUR_BACKGROUND_IMAGE_URL_HERE");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  padding:18px;color:var(--text);
+}
+body::before{
+  /* overlay for readability */
+  content:"";
+  position:fixed;inset:0;
+  background:rgba(0,10,40,0.45);
+  backdrop-filter:blur(3px);
+  z-index:0;
+}
+.container{
+  width:100%;max-width:560px;
+  background:rgba(255,255,255,0.95);
+  border-radius:14px;padding:18px;
+  box-shadow:0 18px 46px rgba(0,0,60,0.35);
+  position:relative;z-index:5;
+  overflow:hidden;
+}
+.progressWrap{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.progress{flex:1;height:9px;background:rgba(0,0,0,0.06);border-radius:999px;overflow:hidden}
+.progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;transition:width .45s ease}
+.progressNum{min-width:44px;text-align:right;color:var(--muted);font-weight:700;font-size:13px}
+.question{animation:fadeIn .32s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-    /* Card */
-    .container{
-      background:var(--card-bg);
-      border-radius:18px;
-      padding:22px;
-      max-width:560px;
-      width:100%;
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(var(--glass-blur));
-      position:relative;
-      transform-style:preserve-3d;
-      transition:transform 220ms ease, box-shadow 220ms ease;
-      will-change:transform;
-      overflow:hidden;
-    }
+/* Royal blue question gradient */
+.question h3{
+  text-align:center;font-size:20px;margin-bottom:14px;
+  background:linear-gradient(90deg,#0046ff,#00b4ff,#66d3ff,#0046ff);
+  background-size:250% 250%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:royalFlow 5.5s ease-in-out infinite;font-weight:800;letter-spacing:0.3px;
+  text-shadow:0 1px 2px rgba(0,0,0,0.12);
+}
+@keyframes royalFlow {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
-    /* floating decorative circles */
-    .bg-circle{
-      position:absolute;right:-120px;top:-80px;width:320px;height:320px;border-radius:50%;
-      background:linear-gradient(180deg, rgba(0,168,107,0.12), rgba(0,178,138,0.06));
-      filter:blur(18px);pointer-events:none;z-index:0;
-    }
-    .bg-circle2{
-      position:absolute;left:-100px;bottom:-90px;width:260px;height:260px;border-radius:50%;
-      background:linear-gradient(180deg, rgba(255,122,0,0.06), rgba(255,77,0,0.03));
-      filter:blur(14px);pointer-events:none;z-index:0;
-    }
+.options{display:flex;flex-direction:column;gap:10px}
+.option{
+  background:#fff;border-radius:10px;padding:12px 14px;cursor:pointer;font-weight:700;text-align:center;
+  border:1px solid rgba(6,32,42,0.06);box-shadow:0 8px 22px rgba(4,18,28,0.06);
+  transition:transform .18s,box-shadow .18s,background .18s,color .18s;user-select:none;
+}
+.option:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(2,12,25,0.1);background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+.option.selected{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;transform:translateY(-8px)}
 
-    /* progress */
-    .progressWrap{display:flex;align-items:center;gap:12px;margin-bottom:14px;z-index:2}
-    .progress{flex:1;height:10px;background:rgba(0,0,0,0.06);border-radius:999px;overflow:hidden;position:relative}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0%;transition:width .5s cubic-bezier(.2,.9,.2,1)}
-    .progressNum{min-width:48px;text-align:right;color:var(--muted);font-weight:700;font-size:13px}
+.thankyou{text-align:center;padding:6px}
+.thank-h{font-size:20px;margin:6px 0;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.thank-sub{color:#334155;margin-bottom:12px}
+.join-btn{
+  display:inline-block;position:relative;overflow:hidden;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff;padding:12px 18px;border-radius:12px;
+  font-weight:800;text-decoration:none;
+  box-shadow:0 10px 28px rgba(0,60,255,0.18);
+}
+.join-btn::after{
+  content:'';position:absolute;left:-50%;top:0;width:40%;height:100%;
+  background:linear-gradient(120deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.28) 50%,rgba(255,255,255,0) 100%);
+  transform:skewX(-20deg);
+  animation:shine 3.4s linear infinite;
+}
+@keyframes shine{0%{left:-60%}100%{left:120%}}
 
-    /* question */
-    .question{animation:cardIn .36s ease; z-index:2; position:relative}
-    @keyframes cardIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-    .question h3{font-size:20px;margin-bottom:14px;text-align:center;color:var(--text-dark)}
-    .options{display:flex;flex-direction:column;gap:10px}
-    /* option entrance */
-    @keyframes optionIn{
-      from{opacity:0; transform:translateY(10px) scale(.995)}
-      to{opacity:1; transform:translateY(0) scale(1)}
-    }
-    .option{
-      background:#fff;border:1px solid rgba(6, 32, 42, 0.06);padding:12px 14px;border-radius:12px;cursor:pointer;font-weight:700;text-align:center;transition:transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s, background .22s, color .22s;
-      display:inline-block; position:relative; overflow:hidden; outline: none;
-      box-shadow: 0 6px 18px rgba(4,18,28,0.06);
-      transform-origin:center; user-select:none;
-      will-change:transform,opacity;
-      animation: optionIn .42s ease both;
-    }
-    .option:hover{ transform: translateY(-6px) scale(1.02); box-shadow: 0 14px 40px rgba(2,12,25,0.12); background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff }
-    .option:focus{ box-shadow:0 10px 30px rgba(0,168,107,0.14); border-color: rgba(0,168,107,0.6) }
-    .option.selected{
-      background:linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:#fff; transform: translateY(-8px) scale(1.03); box-shadow: 0 18px 46px rgba(0,168,107,0.16);
-    }
-    /* pop on select */
-    .option.pop{ animation: popAnim .38s ease both }
-    @keyframes popAnim{
-      0%{ transform: scale(1) }
-      30%{ transform: scale(1.06) }
-      100%{ transform: scale(1.02) }
-    }
-    /* ripple */
-    .option .ripple{ position:absolute;border-radius:999px; transform:scale(0); opacity:.45; background:rgba(255,255,255,0.6); pointer-events:none; }
-    .option.dark .ripple{ background: rgba(0,0,0,0.08) }
-
-    /* thank you */
-    .thankyou{ text-align:center; animation:cardIn .36s ease; z-index:2; }
-    .thank-h{ font-size:22px; margin:6px 0; color:#032; background:linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent }
-    .thank-sub{ color:#334155; margin:8px 0 14px }
-    .join-btn{ display:inline-block; background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; padding:12px 20px; border-radius:14px; font-weight:800; text-decoration:none; animation:btnPulse 1.8s infinite; box-shadow:0 10px 30px rgba(0,168,107,0.16) }
-    @keyframes btnPulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-    .emoji{ font-size:28px; display:inline-block; animation:float 3s ease-in-out infinite }
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
-    .fomo{ background:linear-gradient(90deg,#ff7a00,#ff4d00); color:#fff; padding:8px 12px; border-radius:10px; font-weight:700; display:inline-block; margin:12px 0; font-size:13px }
-    .countdown{ font-weight:800; color:#e11d48; margin-top:10px }
-
-    /* small responsive tweak */
-    @media (max-width:520px){
-      .container{padding:16px}
-      .option{padding:12px}
-    }
-  </style>
+.emoji{font-size:26px;display:inline-block;margin-bottom:6px}
+.fomo{
+  background:linear-gradient(90deg,#ff7a00,#ff4d00);
+  color:#fff;padding:8px 12px;border-radius:10px;
+  font-weight:700;display:inline-block;margin:10px 0;font-size:13px;
+}
+.count{font-weight:800;color:#e11d48;margin-top:8px}
+@media (max-width:520px){.container{padding:14px}.option{padding:12px}}
+</style>
 </head>
+
 <body>
-  <main class="container" id="card">
-    <div class="bg-circle"></div>
-    <div class="bg-circle2"></div>
+<main class="container">
+  <div class="progressWrap">
+    <div class="progress"><i id="bar"></i></div>
+    <div class="progressNum" id="progNum">0%</div>
+  </div>
+  <div id="q-box"></div>
+</main>
 
-    <div class="progressWrap" aria-hidden="true">
-      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
-      <div class="progressNum" id="progNum">0%</div>
-    </div>
+<script>
+const telegramLink = "https://t.me/+ZrjDtoQ9Tgw3ZWQ1";
+const questions = [
+  { q: "How much experience do you have in Forex trading?", options: ["Beginner (0-6 months)","Intermediate (6-24 months)","Expert (2+ years)"] },
+  { q: "What’s your main goal from Forex trading?", options: ["Daily Income","Learning & Mentorship","Long-Term Wealth","Just Exploring"] },
+  { q: "What’s your current trading capital?", options: ["Below $100","$100–$500","$500–$1000","Above $1000"] },
+  { q: "Are you looking for free signals or professional mentorship?", options: ["Free Signals","Mentorship & Advanced Learning","Both","Not Sure Yet"] }
+];
+let current=0;const qBox=document.getElementById('q-box');const bar=document.getElementById('bar');const progNum=document.getElementById('progNum');const answers={};
 
-    <div id="q-box"></div>
-  </main>
-
-  <script>
-    // --- config ---
-    const telegramLink = "https://t.me/+ZrjDtoQ9Tgw3ZWQ1";
-
-    // 4 optimized questions
-    const questions = [
-      { q: "How much experience do you have in Forex trading?", options: ["Beginner (0-6 months)", "Intermediate (6-24 months)", "Expert (2+ years)"] },
-      { q: "What’s your main goal from Forex trading?", options: ["Daily Income", "Learning & Mentorship", "Long-Term Wealth", "Just Exploring"] },
-      { q: "What’s your current trading capital?", options: ["Below $100", "$100–$500", "$500–$1000", "Above $1000"] },
-      { q: "Are you looking for free signals or professional mentorship?", options: ["Free Signals", "Mentorship & Advanced Learning", "Both", "Not Sure Yet"] }
-    ];
-
-    // state
-    let current = 0;
-    const qBox = document.getElementById('q-box');
-    const bar = document.getElementById('bar');
-    const progNum = document.getElementById('progNum');
-    const answers = {};
-
-    // card tilt on mouse move
-    const card = document.getElementById('card');
-    card.addEventListener('mousemove', (e)=>{
-      const r = card.getBoundingClientRect();
-      const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
-      const dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-      const tiltX = (-dy * 4).toFixed(2);
-      const tiltY = (dx * 6).toFixed(2);
-      card.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(0)`;
-    });
-    card.addEventListener('mouseleave', ()=>{ card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)'; });
-
-    // render question with staggered options
-    function renderQuestion(){
-      const q = questions[current];
-      qBox.innerHTML = `
-        <div class="question" role="group" aria-labelledby="q${current}">
-          <h3 id="q${current}">${q.q}</h3>
-          <div class="options" role="list">
-            ${q.options.map((opt,i)=>`<div class="option" role="button" tabindex="0" data-i="${i}" style="animation-delay:${i*90}ms">${opt}</div>`).join('')}
-          </div>
-        </div>`;
-      updateProgress();
-      // attach events & keyboard
-      document.querySelectorAll('.option').forEach(o=>{
-        o.addEventListener('click', onChoose);
-        o.addEventListener('keydown', (ev)=>{ if(ev.key==='Enter' || ev.key===' ') { ev.preventDefault(); o.click(); }});
-      });
-    }
-
-    function updateProgress(){
-      const pct = Math.round((current / questions.length) * 100);
-      bar.style.width = pct + "%";
-      progNum.textContent = pct + "%";
-    }
-
-    // click ripple helper
-    function createRipple(target, x, y){
-      const rect = target.getBoundingClientRect();
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      const size = Math.max(rect.width, rect.height) * 1.2;
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (x - rect.left - size/2) + 'px';
-      ripple.style.top = (y - rect.top - size/2) + 'px';
-      target.appendChild(ripple);
-      // dark background adjust if selected bg
-      if(window.getComputedStyle(target).backgroundImage !== 'none' && getComputedStyle(target).color === 'rgb(255, 255, 255)'){
-        ripple.style.background = 'rgba(255,255,255,0.18)';
-      } else {
-        ripple.style.background = 'rgba(0,0,0,0.06)';
-      }
-      ripple.animate([{transform:'scale(0)', opacity:1},{transform:'scale(1.8)', opacity:0}], {duration:420, easing:'cubic-bezier(.2,.9,.2,1)'});
-      setTimeout(()=> ripple.remove(), 520);
-    }
-
-    function onChoose(ev){
-      // handle both mouse & keyboard
-      const el = ev.currentTarget || ev.target;
-      // ripple
-      const x = (ev.clientX || (el.getBoundingClientRect().left + el.offsetWidth/2));
-      const y = (ev.clientY || (el.getBoundingClientRect().top + el.offsetHeight/2));
-      createRipple(el, x, y);
-
-      // mark selected visually
-      document.querySelectorAll('.option').forEach(o=> o.classList.remove('selected'));
-      el.classList.add('selected');
-      // short pop animation
-      el.classList.add('pop');
-      setTimeout(()=> el.classList.remove('pop'), 420);
-
-      // store answer
-      const q = questions[current];
-      answers[q.q] = el.textContent.trim();
-
-      // small delay then next
-      setTimeout(()=> {
-        if(current < questions.length - 1){
-          current++; renderQuestion();
-        } else {
-          // finish
-          bar.style.width = "100%";
-          progNum.textContent = "100%";
-          showThankYou();
-        }
-      }, 380);
-    }
-
-    // helper fragments and pixel event
-    function fragExperience(){ const e = answers[questions[0].q] || ''; return e;}
-    function fragGoal(){ return answers[questions[1].q] || ''; }
-    function fragCapital(){ return answers[questions[2].q] || ''; }
-    function fragInterest(){ return answers[questions[3].q] || ''; }
-
-    function joinButtonText(){
-      const g = fragGoal();
-      if(!g) return 'Join Telegram Now →';
-      const short = g.includes('Daily') ? 'Daily Income' :
-                    g.includes('Mentorship') ? 'Mentorship' :
-                    g.includes('Wealth') ? 'Wealth' :
-                    g.includes('Exploring') ? 'Signals' : g;
-      return `Join for ${short} →`;
-    }
-
-    function sendSubscribeEvent(){
-      const payload = {
-        experience: fragExperience(),
-        goal: fragGoal(),
-        capital: fragCapital(),
-        interest: fragInterest()
-      };
-      try {
-        fbq('track', 'Subscribe', payload);
-        console.log('Subscribe sent', payload);
-      } catch(e){ console.warn('fbq error', e); }
-    }
-
-    // build dynamic thank you UI with personalized button text
-    function showThankYou(){
-      const exp = fragExperience(); const goal = fragGoal(); const cap = fragCapital();
-      const headline = `As ${exp}${cap ? ' — ' + cap : ''}, aiming for ${goal.toLowerCase()}, you qualify for free access.`;
-      const sub = exp.includes('Beginner') ? `You chose "${goal}". We'll share simple signals + learning guides.` :
-                  exp.includes('Intermediate') ? `You chose "${goal}". Expect actionable intraday signals.` :
-                  exp.includes('Expert') ? `You chose "${goal}". Expect high-prob setups and sizing ideas.` :
-                  `You chose "${goal}". Join now to receive live signals.`;
-
-      qBox.innerHTML = `
-        <div class="thankyou" aria-live="polite">
-          <div>ElitePips</div>
-          <div class="thank-h">${headline}</div>
-          <div class="thank-sub">${sub}</div>
-          <div><span class="fomo">⚡ Only few spots left — Join before access closes!</span></div>
-          <a id="joinBtn" class="join-btn" href="${telegramLink}">${joinButtonText()}</a>
-          <div class="countdown">Redirecting in <span id="count">3</span>s...</div>
-        </div>`;
-
-      // manual click event
-      document.getElementById('joinBtn').addEventListener('click', (ev)=>{
-        sendSubscribeEvent();
-        // no blocking delay to preserve UX
-      });
-
-      // auto countdown
-      let t = 3;
-      const countEl = document.getElementById('count');
-      const timer = setInterval(()=>{
-        t--; countEl.textContent = t;
-        if(t <= 0){
-          clearInterval(timer);
-          sendSubscribeEvent();
-          // give pixel tiny time then redirect
-          setTimeout(()=> { window.location.href = telegramLink; }, 220);
-        }
-      }, 1000);
-    }
-
-    // accessibility: numeric 1-4 quick pick
-    document.addEventListener('keydown', (e)=>{
-      const key = e.key;
-      if(['1','2','3','4'].includes(key)){
-        const idx = parseInt(key,10)-1;
-        const opts = document.querySelectorAll('.option');
-        if(opts[idx]) opts[idx].click();
-      }
-    });
-
-    // init
-    renderQuestion();
-  </script>
+function renderQuestion(){
+  const q=questions[current];
+  qBox.innerHTML=`
+    <div class="question"><h3>${q.q}</h3>
+      <div class="options">${q.options.map(opt=>`<div class="option">${opt}</div>`).join('')}</div>
+    </div>`;
+  updateProgress();
+  document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',onChoose));
+}
+function updateProgress(){
+  const pct=Math.round((current/questions.length)*100);
+  bar.style.width=pct+"%";progNum.textContent=pct+"%";
+}
+function onChoose(ev){
+  const el=ev.currentTarget;
+  document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');answers[questions[current].q]=el.textContent.trim();
+  setTimeout(()=>{if(current<questions.length-1){current++;renderQuestion();}else{bar.style.width="100%";progNum.textContent="100%";showThankYou();}},320);
+}
+function sendSubscribe(){try{fbq('track','Subscribe',answers);}catch(e){}}
+function showThankYou(){
+  const goal=answers[questions[1].q]||'trading';
+  qBox.innerHTML=`
+  <div class="thankyou">
+    <div class="emoji">🚀</div>
+    <div class="thank-h">You're all set for ${goal} success!</div>
+    <div class="thank-sub">Join our Telegram group for daily live signals and mentorship.</div>
+    <div><span class="fomo">⚡ Only few spots left — Join before access closes!</span></div>
+    <a id="joinBtn" class="join-btn" href="${telegramLink}">Join Telegram Now →</a>
+    <div class="count">Redirecting in <span id="count">3</span>s...</div>
+  </div>`;
+  const join=document.getElementById('joinBtn');join.addEventListener('click',()=>sendSubscribe());
+  let t=3;const c=document.getElementById('count');const timer=setInterval(()=>{t--;c.textContent=t;if(t<=0){clearInterval(timer);sendSubscribe();setTimeout(()=>location.href=telegramLink,200);}},1000);
+}
+renderQuestion();
+</script>
 </body>
 </html>
