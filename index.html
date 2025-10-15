@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>ElitePips</title>
-<meta name="description" content="Answer 4 quick questions to join free Forex signals on Telegram. Limited access available!"/>
+<meta name="description" content="Answer quick questions to join free Forex signals on Telegram. Limited access available!"/>
 <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
 <link rel="preconnect" href="https://t.me" crossorigin>
 <meta name="theme-color" content="#001022">
@@ -33,15 +33,12 @@ fbq('track', 'PageView');
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-
-/* ✅ One-line background — replace image URL below */
 body{
   background:linear-gradient(145deg,#001022,#002a4a),
              url("YOUR_BACKGROUND_IMAGE_URL_HERE") center/cover no-repeat fixed;
   display:flex;align-items:center;justify-content:center;
   padding:18px;color:var(--text);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   overflow:hidden;
 }
 body::before{
@@ -49,8 +46,6 @@ body::before{
   background:rgba(0,10,40,0.45);
   backdrop-filter:blur(4px);z-index:0;
 }
-
-/* Card */
 .container{
   width:100%;max-width:640px;
   background:var(--card-bg);
@@ -59,18 +54,12 @@ body::before{
   backdrop-filter:blur(6px);
   position:relative;z-index:5;overflow:hidden;color:var(--text);
 }
-
-/* Progress */
 .progressWrap{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .progress{flex:1;height:9px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
 .progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;transition:width .45s ease}
 .progressNum{min-width:44px;text-align:right;color:var(--muted);font-weight:700;font-size:13px}
-
-/* Question */
 .question{animation:fadeIn .32s ease;text-align:center;margin-bottom:14px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-
-/* ✨ Luxury Purple-Blue Sticker Style */
 .question h3{
   font-size:20px;
   font-weight:800;
@@ -97,8 +86,6 @@ body::before{
   box-shadow:0 4px 20px rgba(140,80,255,0.3);
 }
 @keyframes royalFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-
-/* Options */
 .options{display:flex;flex-direction:column;gap:10px}
 .option{
   background:rgba(255,255,255,0.02);
@@ -109,7 +96,6 @@ body::before{
 }
 .option:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(80,0,160,0.3);background:linear-gradient(90deg,rgba(80,0,160,0.22),rgba(0,150,255,0.12));color:#fff}
 .option.selected{background:linear-gradient(90deg,rgba(120,0,220,0.22),rgba(0,180,255,0.14));color:#fff;transform:translateY(-8px)}
-
 .thankyou{text-align:center;padding:6px}
 .thank-h{font-size:20px;margin:6px 0;background:linear-gradient(90deg,#bca6ff,#7cb8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .thank-sub{color:#bfcfe6;margin-bottom:12px}
@@ -147,9 +133,7 @@ body::before{
 const telegramLink="https://t.me/+ZrjDtoQ9Tgw3ZWQ1";
 const questions=[
   {q:"How much experience do you have in Forex trading?",options:["Beginner (0-6 months)","Intermediate (6-24 months)","Expert (2+ years)"]},
-  {q:"What’s your main goal from Forex trading?",options:["Daily Income","Learning & Mentorship","Long-Term Wealth","Just Exploring"]},
-  {q:"What’s your current trading capital?",options:["Below $100","$100–$500","$500–$1000","Above $1000"]},
-  {q:"Are you looking for free signals or professional mentorship?",options:["Free Signals","Mentorship & Advanced Learning","Both","Not Sure Yet"]}
+  {q:"What’s your current trading capital?",options:["Below $100","$100–$500","$500–$1000","Above $1000"]}
 ];
 let current=0;
 const qBox=document.getElementById('q-box'),bar=document.getElementById('bar'),progNum=document.getElementById('progNum'),answers={};
@@ -159,24 +143,38 @@ function renderQuestion(){
   updateProgress();
   document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',onChoose));
 }
-function updateProgress(){const pct=Math.round((current/questions.length)*100);bar.style.width=pct+"%";progNum.textContent=pct+"%";}
+function updateProgress(){
+  const pct=Math.round((current/questions.length)*100);
+  bar.style.width=pct+"%";
+  progNum.textContent=pct+"%";
+}
 function onChoose(ev){
   const el=ev.currentTarget;
   document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
   el.classList.add('selected');
   answers[questions[current].q]=el.textContent.trim();
-  setTimeout(()=>{if(current<questions.length-1){current++;renderQuestion();}else{bar.style.width="100%";progNum.textContent="100%";showThankYou();}},320);
+  setTimeout(()=>{
+    if(current<questions.length-1){
+      current++;renderQuestion();
+    }else{
+      bar.style.width="100%";progNum.textContent="100%";showThankYou();
+    }
+  },320);
 }
 function sendSubscribe(){try{fbq('track','Subscribe',answers);}catch(e){}}
 function showThankYou(){
-  const goal=answers[questions[1].q]||'trading',exp=answers[questions[0].q]||'',cap=answers[questions[2].q]||'';
-  const headline=`As ${exp}${cap?(' — '+cap):''}, aiming for ${goal.toLowerCase()}, you qualify for free access.`;
-  const sub=exp.includes('Beginner')?`You chose "${goal}". We'll share simple signals & learning guides.`:
-           exp.includes('Intermediate')?`You chose "${goal}". Expect actionable intraday signals.`:
-           exp.includes('Expert')?`You chose "${goal}". Expect high-prob setups and sizing ideas.`:`You chose "${goal}". Join now to receive live signals.`;
+  const exp=answers[questions[0].q]||'',cap=answers[questions[1].q]||'';
+  const headline=`As ${exp} trader with ${cap} capital, you qualify for exclusive access.`;
+  const sub=exp.includes('Beginner')?`We'll send you easy-to-follow signals and starter guides.`:
+           exp.includes('Intermediate')?`Expect strong daily setups and advanced insights.`:
+           exp.includes('Expert')?`You’ll get professional-level entries and risk setups.`:`Join now to get live signals.`;
   qBox.innerHTML=`<div class="thankyou"><div class="emoji">🚀</div><div class="thank-h">${headline}</div><div class="thank-sub">${sub}</div><div><span class="fomo">⚡ Only few spots left — Join before access closes!</span></div><a id="joinBtn" class="join-btn" href="${telegramLink}">Join Telegram Now →</a><div class="count">Redirecting in <span id="count">10</span>s...</div></div>`;
   document.getElementById('joinBtn').addEventListener('click',()=>sendSubscribe());
-  let t=10;const count=document.getElementById('count');const timer=setInterval(()=>{t--;count.textContent=t;if(t<=0){clearInterval(timer);sendSubscribe();setTimeout(()=>location.href=telegramLink,200);}},1000);
+  let t=10;const count=document.getElementById('count');
+  const timer=setInterval(()=>{
+    t--;count.textContent=t;
+    if(t<=0){clearInterval(timer);sendSubscribe();setTimeout(()=>location.href=telegramLink,200);}
+  },1000);
 }
 renderQuestion();
 </script>
