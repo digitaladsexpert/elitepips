@@ -7,11 +7,9 @@
   <meta name="description" content="Join free Forex signals on Telegram — live setups, risk management & daily alerts. Limited seats, join today." />
   <meta name="theme-color" content="#002b36">
 
-  <!-- Performance: preconnect to Meta Pixel -->
   <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
   <link rel="dns-prefetch" href="https://connect.facebook.net">
 
-  <!-- ✅ Meta Pixel (configured) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,7 +35,12 @@
       --maxw:980px;
       --text-dark:#06202a;
     }
-    html,body{height:100%;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; background-color:#001f33; color:var(--text-dark);}
+    html,body{
+      height:100%;margin:0;padding:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased;
+      background-color:#001f33;color:var(--text-dark);
+    }
     body{
       background-image:
         radial-gradient(1200px 600px at 10% 10%, rgba(0,200,140,0.06), transparent 6%),
@@ -47,21 +50,16 @@
         repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 40px);
       background-blend-mode: screen, screen, normal, overlay, overlay;
       background-size: auto, auto, cover, 40px 40px, 40px 40px;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
+      display:flex;align-items:center;justify-content:center;
+      padding:28px;min-height:100vh;
     }
 
     .container{
-      width:100%;
-      max-width:var(--maxw);
+      width:100%;max-width:var(--maxw);
       background: var(--card-bg);
       border-radius:16px;
       box-shadow: 0 20px 50px rgba(2,6,23,0.45);
       padding:28px;
-      display:block;
       -webkit-backdrop-filter: blur(var(--glass-blur));
       backdrop-filter: blur(var(--glass-blur));
       border: 1px solid rgba(255,255,255,0.06);
@@ -70,12 +68,18 @@
     .container:focus-within{ transform: translateY(-6px); }
 
     .header{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center}
+    
+    /* ✅ Updated logo section */
     .logo{
       width:96px;height:96px;border-radius:50%;
       background: conic-gradient(from 200deg, #00ffb3, #00b377, #007a56, #00ffb3);
       display:flex;align-items:center;justify-content:center;position:relative;
       box-shadow: 0 8px 28px rgba(0,168,107,0.24);
-      overflow:hidden;cursor:pointer; border: 3px solid rgba(255,255,255,0.06);
+      overflow:hidden;cursor:pointer;
+      border: 3px solid rgba(255,255,255,0.06);
+    }
+    .logo img{
+      width:100%;height:100%;object-fit:cover;border-radius:50%;
     }
     .logo::after{
       content:'';
@@ -86,32 +90,23 @@
       animation:logo-shine 3.2s linear infinite;
       pointer-events:none;
     }
-    @keyframes logo-shine{ 0%{top:-120%} 45%{top:30%} 100%{top:30%} }
-    .logo-text{font-weight:900;color:#023; font-size:28px; text-shadow:0 2px 6px rgba(0,0,0,0.25); color: #fff;}
+    @keyframes logo-shine{0%{top:-120%}45%{top:30%}100%{top:30%}}
 
     h1{font-size:22px;margin:8px 0 6px;color:#06202a;text-align:center}
     p.lead{margin:0 0 12px;color:#334155;font-size:15px;text-align:center;line-height:1.45}
     .fomo{display:inline-block;background:linear-gradient(90deg,var(--accent3),#ff5b00);color:#fff;padding:10px 14px;border-radius:12px;font-weight:800;margin:10px 0}
-    .controls{margin-top:16px;text-align:center}
+    .controls{text-align:center;margin-top:16px}
     .join-btn{
-      display:inline-block;
-      background: linear-gradient(90deg,var(--accent1),var(--accent2));
-      color:#fff;
-      padding:14px 24px;
-      border-radius:14px;
-      font-weight:800;
-      font-size:17px;
-      text-decoration:none;
-      box-shadow:0 12px 30px rgba(0,168,107,0.2);
-      border: none;
-      cursor: pointer;
-      transition:transform .18s ease, box-shadow .18s ease;
+      display:inline-block;background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#fff;padding:14px 24px;border-radius:14px;font-weight:800;
+      font-size:17px;text-decoration:none;box-shadow:0 12px 30px rgba(0,168,107,0.2);
+      border:none;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;
     }
-    .join-btn:active{ transform: translateY(2px); }
-    .join-btn:hover{ transform: scale(1.03); }
+    .join-btn:hover{transform:scale(1.03)}
+    .join-btn:active{transform:translateY(2px)}
 
     .meta-row{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:12px;flex-wrap:wrap}
-    .meta-item{background:rgba(255,255,255,0.98);padding:8px 12px;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.06);font-weight:700;color:#063;}
+    .meta-item{background:rgba(255,255,255,0.98);padding:8px 12px;border-radius:10px;box-shadow:0 8px 20px rgba(2,6,23,0.06);font-weight:700;color:#063}
 
     .features{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px}
     .feature{background:rgba(255,255,255,0.96);padding:8px 12px;border-radius:10px;font-weight:700;color:#042}
@@ -131,30 +126,29 @@
 </head>
 <body>
 
-  <main class="container" id="main-page" role="main" aria-labelledby="page-heading">
-    <header class="header" aria-hidden="false">
+  <main class="container" id="main-page">
+    <header class="header">
       <div class="logo" id="logo" title="Forex Signals">
-        <div class="logo-text" aria-hidden="true">FX</div>
+        <!-- ✅ Logo image added here -->
+        <img src="logo.png" alt="Forex Channel Logo">
       </div>
     </header>
 
-    <h1 id="page-heading">Free Forex Signals — Live Intraday Calls</h1>
-    <p class="lead">Real-time Forex alerts (EUR/USD · GBP/USD · USD/INR). Entry · Stoploss · Targets — Daily setups & risk mgmt.</p>
+    <h1>Free Forex Signals — Live Intraday Calls</h1>
+    <p class="lead">Real-time Forex alerts (XAUUSD · BTCUSD · ETHUSD). Entry · Stoploss · Targets — Daily setups & risk mgmt.</p>
 
-    <div class="fomo" role="status" aria-live="polite">🚨 Only <strong id="seats">150</strong> seats left — Join Now ⏳</div>
+    <div class="fomo">🚨 Only <strong id="seats">150</strong> seats left — Join Now ⏳</div>
 
-    <div class="controls" aria-hidden="false">
-      <button id="primary-cta" class="join-btn" aria-label="Join Free Forex Signals on Telegram" onclick="startVerification(event)">
-        🚀 Get Free Forex Signals — Join Telegram
-      </button>
+    <div class="controls">
+      <button id="primary-cta" class="join-btn" onclick="startVerification(event)">🚀 Get Free Forex Signals — Join Telegram</button>
     </div>
 
-    <div class="meta-row" aria-hidden="false">
+    <div class="meta-row">
       <div class="meta-item">🔥 <strong>9,800+</strong> Traders</div>
       <div class="meta-item">⭐ Rated 4.8 (3k+)</div>
     </div>
 
-    <div class="features" aria-hidden="false">
+    <div class="features">
       <div class="feature">Intraday Setups</div>
       <div class="feature">Live Alerts</div>
       <div class="feature">Risk Management</div>
@@ -164,10 +158,10 @@
     <p class="disclaimer">Disclaimer: Forex trading involves risk. Signals are educational — not financial advice. Results vary by user.</p>
   </main>
 
-  <button id="sticky" class="join-btn sticky-cta" onclick="startVerification(event)" aria-hidden="true">Join Free Signals →</button>
+  <button id="sticky" class="join-btn sticky-cta" onclick="startVerification(event)">Join Free Signals →</button>
 
-  <div id="verify-wrap" class="verify-wrap" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="verify-box" role="status" aria-live="polite">
+  <div id="verify-wrap" class="verify-wrap">
+    <div class="verify-box">
       <div><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
       <div style="margin-top:12px;font-weight:700">Verifying... Please wait</div>
       <div style="margin-top:8px;color:#64748b;font-size:14px">Protecting from fake clicks. Redirecting in <span id="count">3</span>s</div>
@@ -179,49 +173,38 @@
     const telegramLink = "https://t.me/+ZrjDtoQ9Tgw3ZWQ1";
     function trackLead(){ try{ if(window.fbq) fbq('track','Lead'); }catch(e){} }
     let stickyShown = false;
-    window.addEventListener('scroll', function(){
-      if(window.scrollY > window.innerHeight * 0.55 && !stickyShown){
-        document.getElementById('sticky').style.display = 'inline-block';
-        document.getElementById('sticky').setAttribute('aria-hidden', 'false');
-        stickyShown = true;
+    window.addEventListener('scroll',function(){
+      if(window.scrollY>window.innerHeight*0.55 && !stickyShown){
+        document.getElementById('sticky').style.display='inline-block';
+        stickyShown=true;
       }
-    }, {passive:true});
+    });
     (function seatSim(){
-      let seats = 150;
-      const el = document.getElementById('seats');
+      let seats=150;const el=document.getElementById('seats');
       setInterval(function(){
-        if(seats > 8){
-          seats -= Math.floor(Math.random()*2);
-          if(seats < 8) seats = 8;
-          el.textContent = seats;
+        if(seats>8){
+          seats-=Math.floor(Math.random()*2);
+          if(seats<8)seats=8;
+          el.textContent=seats;
         }
-      }, 9000);
+      },9000);
     })();
     function startVerification(e){
-      e && e.preventDefault && e.preventDefault();
-      try{ if(navigator.webdriver){ alert('Please open this page in a standard browser.'); return; } }catch(err){}
+      e.preventDefault();
+      try{if(navigator.webdriver){alert('Please open this page in a standard browser.');return;}}catch(err){}
       trackLead();
-      const wrap = document.getElementById('verify-wrap');
-      wrap.style.display = 'flex';
-      wrap.setAttribute('aria-hidden','false');
-      document.getElementById('main-page').setAttribute('aria-hidden','true');
-      let t = 3;
-      const el = document.getElementById('count');
-      el.textContent = t;
-      const interval = setInterval(function(){
-        t--; el.textContent = t;
-        if(t <= 0){ clearInterval(interval); window.location.href = telegramLink; }
-      }, 1000);
-      setTimeout(function(){ window.location.href = telegramLink; }, 5000);
+      const wrap=document.getElementById('verify-wrap');
+      wrap.style.display='flex';
+      let t=3;const el=document.getElementById('count');
+      el.textContent=t;
+      const interval=setInterval(function(){
+        t--;el.textContent=t;
+        if(t<=0){clearInterval(interval);window.location.href=telegramLink;}
+      },1000);
+      setTimeout(function(){window.location.href=telegramLink;},5000);
     }
-    function cancelVerify(){
-      const wrap = document.getElementById('verify-wrap');
-      wrap.style.display = 'none';
-      wrap.setAttribute('aria-hidden','true');
-      document.getElementById('main-page').setAttribute('aria-hidden','false');
-    }
-    document.getElementById('logo').addEventListener('click', function(){ document.getElementById('primary-cta') && document.getElementById('primary-cta').click && document.getElementById('primary-cta').click(); });
-    document.getElementById('logo').addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); document.getElementById('primary-cta').click(); } });
+    function cancelVerify(){document.getElementById('verify-wrap').style.display='none';}
+    document.getElementById('logo').addEventListener('click',()=>document.getElementById('primary-cta').click());
     document.getElementById('logo').setAttribute('tabindex','0');
   </script>
 </body>
