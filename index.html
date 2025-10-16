@@ -4,12 +4,10 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>ElitePips</title>
-<meta name="description" content="Answer quick questions to join free Forex signals on Telegram. Limited access available!"/>
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preconnect" href="https://t.me" crossorigin>
+<meta name="description" content="Answer one quick question to join free Forex signals on Telegram. Limited access available!"/>
 <meta name="theme-color" content="#001022">
 
-<!-- Meta Pixel -->
+<!-- Meta Pixel (left as-is) -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -25,98 +23,67 @@ fbq('track', 'PageView');
 
 <style>
 :root{
-  --accent1:#0046ff;
-  --accent2:#00b4ff;
+  --accent1:#ff7a00; /* warm FOMO accent */
+  --accent2:#ff4d00;
   --text:#e6eefb;
-  --muted:#9aa6bf;
-  --card-bg:rgba(5,10,20,0.85);
+  --muted:#bfcfe6;
+  --card-bg:rgba(6,8,15,0.9);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{
-  background:linear-gradient(145deg,#001022,#002a4a),
-             url("YOUR_BACKGROUND_IMAGE_URL_HERE") center/cover no-repeat fixed;
+  background:linear-gradient(160deg,#001022,#002a4a);
   display:flex;align-items:center;justify-content:center;
   padding:18px;color:var(--text);
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-  overflow:hidden;
-}
-body::before{
-  content:"";position:fixed;inset:0;
-  background:rgba(0,10,40,0.45);
-  backdrop-filter:blur(4px);z-index:0;
 }
 .container{
   width:100%;max-width:640px;
   background:var(--card-bg);
   border-radius:14px;padding:20px;
-  box-shadow:0 24px 60px rgba(0,10,30,0.65);
-  backdrop-filter:blur(6px);
-  position:relative;z-index:5;overflow:hidden;color:var(--text);
+  box-shadow:0 24px 60px rgba(0,10,30,0.6);
+  position:relative;overflow:hidden;color:var(--text);
 }
 .progressWrap{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.progress{flex:1;height:9px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
+.progress{flex:1;height:9px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
 .progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;transition:width .45s ease}
-.progressNum{min-width:44px;text-align:right;color:var(--muted);font-weight:700;font-size:13px}
+.progressNum{min-width:44px;text-align:right;color:var();font-weight:700;font-size:13px}
 .question{animation:fadeIn .32s ease;text-align:center;margin-bottom:14px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.question h3{
-  font-size:20px;
-  font-weight:800;
-  letter-spacing:0.3px;
-  background:linear-gradient(90deg,#bca6ff,#7cb8ff,#d0c2ff,#7cb8ff);
-  background-size:250% 250%;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:royalFlow 5.5s ease-in-out infinite;
-  text-shadow:0 2px 4px rgba(0,0,0,0.4);
-  position:relative;
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:12px;
+.hype{
+  display:inline-block;padding:10px 14px;border-radius:12px;font-weight:900;font-size:20px;
+  background:linear-gradient(90deg,#ffd9b3,#ffb48a);color:#1b0520;
+  box-shadow:0 8px 30px rgba(255,120,0,0.12);
 }
-.question h3::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg, rgba(140,80,255,0.25), rgba(0,120,255,0.18));
-  border-radius:12px;
-  backdrop-filter:blur(8px);
-  z-index:-1;
-  box-shadow:0 4px 20px rgba(140,80,255,0.3);
-}
-@keyframes royalFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.options{display:flex;flex-direction:column;gap:10px}
+.hype.small{font-size:16px;padding:8px 12px}
+.pulse{animation:pulse 1.6s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+.options{display:flex;flex-direction:column;gap:10px;margin-top:12px}
 .option{
   background:rgba(255,255,255,0.02);
-  border-radius:12px;padding:12px 14px;cursor:pointer;font-weight:700;text-align:center;
-  border:1px solid rgba(255,255,255,0.05);
-  box-shadow:0 8px 30px rgba(0,0,0,0.6);
-  color:var(--text);transition:transform .18s,box-shadow .18s,background .18s,color .18s;
+  border-radius:12px;padding:12px 14px;cursor:pointer;font-weight:800;text-align:center;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+  transition:transform .16s,box-shadow .16s,background .16s;
 }
-.option:hover{transform:translateY(-5px);box-shadow:0 18px 46px rgba(80,0,160,0.3);background:linear-gradient(90deg,rgba(80,0,160,0.22),rgba(0,150,255,0.12));color:#fff}
-.option.selected{background:linear-gradient(90deg,rgba(120,0,220,0.22),rgba(0,180,255,0.14));color:#fff;transform:translateY(-8px)}
+.option:hover{transform:translateY(-6px);box-shadow:0 18px 46px rgba(255,90,0,0.12);background:linear-gradient(90deg,rgba(255,90,0,0.08),rgba(255,150,0,0.06));}
+.option.selected{background:linear-gradient(90deg,rgba(255,120,0,0.18),rgba(255,60,0,0.12));color:#fff;transform:translateY(-8px)}
 .thankyou{text-align:center;padding:6px}
-.thank-h{font-size:20px;margin:6px 0;background:linear-gradient(90deg,#bca6ff,#7cb8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.thank-sub{color:#bfcfe6;margin-bottom:12px}
+.thank-h{font-size:20px;margin:6px 0;font-weight:900}
+.thank-sub{color:var();margin-bottom:12px}
 .join-btn{
   display:inline-block;position:relative;overflow:hidden;
-  background:linear-gradient(90deg,#8c00ff,#0046ff);
-  color:#fff;padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;
-  box-shadow:0 14px 40px rgba(100,0,200,0.25);
+  background:linear-gradient(90deg,#ff7a00,#ff4d00);
+  color:#fff;padding:12px 18px;border-radius:12px;font-weight:900;text-decoration:none;
+  box-shadow:0 14px 40px rgba(255,90,0,0.18);
 }
-.join-btn::after{
-  content:'';position:absolute;left:-50%;top:0;width:40%;height:100%;
-  background:linear-gradient(120deg,rgba(255,255,255,0)0%,rgba(255,255,255,0.14)50%,rgba(255,255,255,0)100%);
-  transform:skewX(-20deg);filter:blur(6px);
-  animation:shine 3.4s linear infinite;
-}
-.join-btn:hover{transform:translateY(-2px);box-shadow:0 22px 60px rgba(130,0,220,0.35);}
+.join-btn::after{content:'';position:absolute;left:-50%;top:0;width:40%;height:100%;background:linear-gradient(120deg,rgba(255,255,255,0)0%,rgba(255,255,255,0.14)50%,rgba(255,255,255,0)100%);transform:skewX(-20deg);filter:blur(6px);animation:shine 3.4s linear infinite}
 @keyframes shine{0%{left:-60%}100%{left:120%}}
-.emoji{font-size:26px;display:inline-block;margin-bottom:6px}
-.fomo{background:linear-gradient(90deg,#ff7a00,#ff4d00);color:#fff;padding:8px 12px;border-radius:10px;font-weight:700;display:inline-block;margin:10px 0;font-size:13px}
-.count{font-weight:800;color:#ff9aa2;margin-top:8px}
-@media (max-width:520px){.container{padding:14px}.option{padding:12px}}
+.fomo{background:linear-gradient(90deg,#ffe6d6,#ffd0b3);color:#2b0a00;padding:8px 12px;border-radius:10px;font-weight:800;display:inline-block;margin:10px 0;font-size:13px}
+.small{font-size:13px;color:var();margin-top:8px}
+.row{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.btn-ghost{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-weight:700;text-decoration:none;cursor:pointer}
+@media (max-width:520px){.container{padding:14px}.hype{font-size:18px}}
 </style>
 </head>
 
@@ -126,57 +93,89 @@ body::before{
     <div class="progress"><i id="bar"></i></div>
     <div class="progressNum" id="progNum">0%</div>
   </div>
-  <div id="q-box"></div>
+
+  <div id="q-box">
+    <!-- Single question will be rendered here -->
+  </div>
 </main>
 
 <script>
-const telegramLink="https://t.me/+ZrjDtoQ9Tgw3ZWQ1";
-const questions=[
-  {q:"How much experience do you have in Forex trading?",options:["Beginner (0-6 months)","Intermediate (6-24 months)","Expert (2+ years)"]},
-  {q:"What’s your current trading capital?",options:["Below $100","$100–$500","$500–$1000","Above $1000"]}
-];
-let current=0;
-const qBox=document.getElementById('q-box'),bar=document.getElementById('bar'),progNum=document.getElementById('progNum'),answers={};
-function renderQuestion(){
-  const q=questions[current];
-  qBox.innerHTML=`<div class="question"><h3>${q.q}</h3><div class="options">${q.options.map(opt=>`<div class="option">${opt}</div>`).join('')}</div></div>`;
-  updateProgress();
-  document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',onChoose));
+const telegramLink="https://t.me/+ZrjDtoQ9Tgw3ZWQ1"; // keep your link
+let answered=false;
+const qBox=document.getElementById('q-box'), bar=document.getElementById('bar'), progNum=document.getElementById('progNum');
+
+function renderSingleQuestion(){
+  qBox.innerHTML = `
+    <div class="question">
+      <div class="hype pulse">🔥 LIVE Forex signals — traders are booking profits now!</div>
+      <div style="height:10px"></div>
+      <div class="options">
+        <div class="option" data-val="yes">Yes — send me live signals</div>
+        <div class="option" data-val="no">No — not right now</div>
+      </div>
+      <div class="small">Tap one — it only takes a second. Limited spots available.</div>
+    </div>
+  `;
+  updateProgress(0);
+  document.querySelectorAll('.option').forEach(o=>o.addEventListener('click',onChooseSingle));
 }
-function updateProgress(){
-  const pct=Math.round((current/questions.length)*100);
-  bar.style.width=pct+"%";
-  progNum.textContent=pct+"%";
+
+function updateProgress(pct){
+  bar.style.width = pct + "%";
+  progNum.textContent = pct + "%";
 }
-function onChoose(ev){
-  const el=ev.currentTarget;
+
+function onChooseSingle(ev){
+  if(answered) return;
+  answered=true;
+  const el = ev.currentTarget;
+  const val = el.getAttribute('data-val');
   document.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));
   el.classList.add('selected');
-  answers[questions[current].q]=el.textContent.trim();
-  setTimeout(()=>{
-    if(current<questions.length-1){
-      current++;renderQuestion();
-    }else{
-      bar.style.width="100%";progNum.textContent="100%";showThankYou();
-    }
-  },320);
+  setTimeout(()=>{ updateProgress(100); showResultFor(val); },220);
 }
-function sendSubscribe(){try{fbq('track','Subscribe',answers);}catch(e){}}
-function showThankYou(){
-  const exp=answers[questions[0].q]||'',cap=answers[questions[1].q]||'';
-  const headline=`As ${exp} trader with ${cap} capital, you qualify for exclusive access.`;
-  const sub=exp.includes('Beginner')?`We'll send you easy-to-follow signals and starter guides.`:
-           exp.includes('Intermediate')?`Expect strong daily setups and advanced insights.`:
-           exp.includes('Expert')?`You’ll get professional-level entries and risk setups.`:`Join now to get live signals.`;
-  qBox.innerHTML=`<div class="thankyou"><div class="emoji">🚀</div><div class="thank-h">${headline}</div><div class="thank-sub">${sub}</div><div><span class="fomo">⚡ Only few spots left — Join before access closes!</span></div><a id="joinBtn" class="join-btn" href="${telegramLink}">Join Telegram Now →</a><div class="count">Redirecting in <span id="count">10</span>s...</div></div>`;
-  document.getElementById('joinBtn').addEventListener('click',()=>sendSubscribe());
-  let t=10;const count=document.getElementById('count');
-  const timer=setInterval(()=>{
-    t--;count.textContent=t;
-    if(t<=0){clearInterval(timer);sendSubscribe();setTimeout(()=>location.href=telegramLink,200);}
-  },1000);
+
+function sendSubscribe(eventName, payload){
+  try{ fbq('track', eventName, payload || {}); }catch(e){}
 }
-renderQuestion();
+
+function showResultFor(val){
+  if(val === 'yes'){
+    qBox.innerHTML = `
+      <div class="thankyou">
+        <div class="hype small">You're moments away from live signals 🚀</div>
+        <div class="thank-sub">Join now to get instant trade alerts and setups used by active members.</div>
+        <div><span class="fomo">⚡ Limited VIP spots — join before it fills up!</span></div>
+        <div class="row" style="margin-top:14px">
+          <a id="joinBtn" class="join-btn" href="${telegramLink}" target="_blank" rel="noopener">Join Telegram Now →</a>
+        </div>
+        <div class="count" style="margin-top:12px">Redirecting in <span id="count">7</span>s...</div>
+      </div>
+    `;
+    sendSubscribe('Subscribe', {interested: 'yes'});
+    let t=7; const count=document.getElementById('count');
+    const timer=setInterval(()=>{ t--; if(count) count.textContent = t; if(t<=0){ clearInterval(timer); sendSubscribe('CompleteRegistration',{interested:'yes'}); window.location.href = telegramLink; } },1000);
+    setTimeout(()=>{ const jb=document.getElementById('joinBtn'); if(jb) jb.addEventListener('click',()=>sendSubscribe('SubscribeClick',{interested:'yes'})); },50);
+  } else {
+    qBox.innerHTML = `
+      <div class="thankyou">
+        <div class="hype small">No problem — take your time 🙂</div>
+        <div class="thank-sub">We have free guides and community resources if you want to explore later.</div>
+        <div class="row">
+          <button id="backBtn" class="btn-ghost">Back</button>
+          <a id="learnBtn" class="join-btn" href="${telegramLink}" target="_blank" rel="noopener">See Resources →</a>
+        </div>
+        <div class="small">You can always come back and join the signals later.</div>
+      </div>
+    `;
+    sendSubscribe('Subscribe', {interested: 'no'});
+    setTimeout(()=>{ const bb=document.getElementById('backBtn'); if(bb) bb.addEventListener('click', ()=>{ answered=false; renderSingleQuestion(); }); },50);
+    setTimeout(()=>{ const lb=document.getElementById('learnBtn'); if(lb) lb.addEventListener('click', ()=>sendSubscribe('LearnClick',{interested:'no'})); },50);
+  }
+}
+
+// initial render
+renderSingleQuestion();
 </script>
 </body>
 </html>
