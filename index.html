@@ -23,7 +23,7 @@ fbq('track', 'PageView');
 
 <style>
 :root{
-  --accent1:#ff7a00; /* warm FOMO accent */
+  --accent1:#ff7a00;
   --accent2:#ff4d00;
   --text:#e6eefb;
   --muted:#bfcfe6;
@@ -47,7 +47,7 @@ body{
 .progressWrap{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .progress{flex:1;height:9px;background:rgba(255,255,255,0.03);border-radius:999px;overflow:hidden}
 .progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:0;transition:width .45s ease}
-.progressNum{min-width:44px;text-align:right;color:var();font-weight:700;font-size:13px}
+.progressNum{min-width:44px;text-align:right;color:var(--muted);font-weight:700;font-size:13px}
 .question{animation:fadeIn .32s ease;text-align:center;margin-bottom:14px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .hype{
@@ -70,7 +70,7 @@ body{
 .option.selected{background:linear-gradient(90deg,rgba(255,120,0,0.18),rgba(255,60,0,0.12));color:#fff;transform:translateY(-8px)}
 .thankyou{text-align:center;padding:6px}
 .thank-h{font-size:20px;margin:6px 0;font-weight:900}
-.thank-sub{color:var();margin-bottom:12px}
+.thank-sub{color:var(--muted);margin-bottom:12px}
 .join-btn{
   display:inline-block;position:relative;overflow:hidden;
   background:linear-gradient(90deg,#ff7a00,#ff4d00);
@@ -93,16 +93,19 @@ body{
     <div class="progress"><i id="bar"></i></div>
     <div class="progressNum" id="progNum">0%</div>
   </div>
-
-  <div id="q-box">
-    <!-- Single question will be rendered here -->
-  </div>
+  <div id="q-box"></div>
 </main>
 
 <script>
-const telegramLink="https://t.me/+ZrjDtoQ9Tgw3ZWQ1"; // keep your link
+/* --- Integrated Telegram invite link (your provided link) --- */
+// For invite links the app scheme uses tg://join?invite=INVITE_HASH
+const telegramAppLink = "tg://join?invite=ZrjDtoQ9Tgw3ZWQ1";
+const telegramWebLink = "https://t.me/+ZrjDtoQ9Tgw3ZWQ1";
+
 let answered=false;
-const qBox=document.getElementById('q-box'), bar=document.getElementById('bar'), progNum=document.getElementById('progNum');
+const qBox=document.getElementById('q-box'),
+      bar=document.getElementById('bar'),
+      progNum=document.getElementById('progNum');
 
 function renderSingleQuestion(){
   qBox.innerHTML = `
@@ -135,8 +138,18 @@ function onChooseSingle(ev){
   setTimeout(()=>{ updateProgress(100); showResultFor(val); },220);
 }
 
-function sendSubscribe(eventName, payload){
-  try{ fbq('track', eventName, payload || {}); }catch(e){}
+/* Try deep open via app URI, fallback to web invite after short delay */
+function deepRedirect(){
+  const now = Date.now();
+  // attempt app open
+  window.location.href = telegramAppLink;
+  // fallback to web link after 900ms (gives mobile OS time to switch to app)
+  setTimeout(()=>{ 
+    // avoid redirect loop if already moved away
+    if(Date.now() - now < 2000){
+      window.location.href = telegramWebLink;
+    }
+  },900);
 }
 
 function showResultFor(val){
@@ -147,15 +160,17 @@ function showResultFor(val){
         <div class="thank-sub">Join now to get instant trade alerts and setups used by active members.</div>
         <div><span class="fomo">⚡ Limited VIP spots — join before it fills up!</span></div>
         <div class="row" style="margin-top:14px">
-          <a id="joinBtn" class="join-btn" href="${telegramLink}" target="_blank" rel="noopener">Join Telegram Now →</a>
+          <a id="joinBtn" class="join-btn" href="#" target="_blank" rel="noopener">Join Telegram Now →</a>
         </div>
         <div class="count" style="margin-top:12px">Redirecting in <span id="count">7</span>s...</div>
       </div>
     `;
-    sendSubscribe('Subscribe', {interested: 'yes'});
     let t=7; const count=document.getElementById('count');
-    const timer=setInterval(()=>{ t--; if(count) count.textContent = t; if(t<=0){ clearInterval(timer); sendSubscribe('CompleteRegistration',{interested:'yes'}); window.location.href = telegramLink; } },1000);
-    setTimeout(()=>{ const jb=document.getElementById('joinBtn'); if(jb) jb.addEventListener('click',()=>sendSubscribe('SubscribeClick',{interested:'yes'})); },50);
+    const timer=setInterval(()=>{
+      t--; if(count) count.textContent = t;
+      if(t<=0){ clearInterval(timer); deepRedirect(); }
+    },1000);
+    setTimeout(()=>{ document.getElementById('joinBtn').addEventListener('click', deepRedirect); },50);
   } else {
     qBox.innerHTML = `
       <div class="thankyou">
@@ -163,14 +178,15 @@ function showResultFor(val){
         <div class="thank-sub">We have free guides and community resources if you want to explore later.</div>
         <div class="row">
           <button id="backBtn" class="btn-ghost">Back</button>
-          <a id="learnBtn" class="join-btn" href="${telegramLink}" target="_blank" rel="noopener">See Resources →</a>
+          <a id="learnBtn" class="join-btn" href="#" target="_blank" rel="noopener">See Resources →</a>
         </div>
         <div class="small">You can always come back and join the signals later.</div>
       </div>
     `;
-    sendSubscribe('Subscribe', {interested: 'no'});
-    setTimeout(()=>{ const bb=document.getElementById('backBtn'); if(bb) bb.addEventListener('click', ()=>{ answered=false; renderSingleQuestion(); }); },50);
-    setTimeout(()=>{ const lb=document.getElementById('learnBtn'); if(lb) lb.addEventListener('click', ()=>sendSubscribe('LearnClick',{interested:'no'})); },50);
+    setTimeout(()=>{
+      document.getElementById('backBtn').addEventListener('click', ()=>{ answered=false; renderSingleQuestion(); });
+      document.getElementById('learnBtn').addEventListener('click', deepRedirect);
+    },50);
   }
 }
 
